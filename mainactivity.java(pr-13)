@@ -1,0 +1,41 @@
+package com.example.mymenu;
+
+import static com.example.mymenu.R.menu.*;
+
+import androidx.appcompat.app.AppCompatActivity;
+
+import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
+import android.widget.Toast;
+
+public class MainActivity extends AppCompatActivity {
+
+    @Override
+    protected void onCreate( Bundle savedInstanceState ) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+    }
+    public boolean onCreateOptionsMenu( Menu m){
+        //  MenuItem item1=menu.add(0,0,0,"first");
+      //  MenuItem item2=menu.add(0,1,1,"second");
+       // MenuItem item3=menu.add(0,2,2,"third");
+      //  MenuItem item4=menu.add(0,3,3,"fourth");
+       getMenuInflater().inflate(R.menu.menu,m);
+        return true;
+
+    }
+    public boolean onOptionsItemSelected(MenuItem item)
+    {
+        if(item.getItemId()==R.id.f_menu)
+        {
+            Toast.makeText(getApplicationContext(),"first is selected",Toast.LENGTH_LONG).show();;
+
+        }
+        if(item.getItemId()==R.id.s_menu)
+        {
+            Toast.makeText(getApplicationContext(),"second is selected",Toast.LENGTH_LONG).show();;
+        }
+        return true;
+    }
+}
